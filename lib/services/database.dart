@@ -61,7 +61,7 @@ class DatabaseService {
   }
 
   Future uploadMessage(String idUser, String idGroup, String message,
-      String image, String name, String email) async {
+      String image, String name, String email, String messageType) async {
     final refMessages = Firestore.instance.collection('group/$idGroup/massage');
 
     await refMessages.document().setData({
@@ -70,7 +70,8 @@ class DatabaseService {
       'username': name,
       'message': message,
       'createdAt': DateTime.now(),
-      'email': email
+      'email': email,
+      'messageType': messageType
     });
   }
 
@@ -159,6 +160,7 @@ class DatabaseService {
       message: snapshot.data['message'],
       createdAt: snapshot.data['createdAt'],
       email: snapshot.data['email'],
+      messageType: snapshot.data['messageType'],
     );
   }
 

@@ -1,3 +1,4 @@
+import 'package:ezhlha/app_localization.dart';
 import 'package:ezhlha/chats_pages/account.dart';
 import 'package:ezhlha/chats_pages/sign_in.dart';
 import 'package:flutter/material.dart';
@@ -26,15 +27,14 @@ class _AllPagesOfChatState extends State<AllPagesOfChat> {
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             // label: 'Account',
-            title: Text('Account'),
+            title: Text(Applocaliztion.of(context).translate('account')),
             backgroundColor: Colors.lightBlue[400],
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.chat),
-            title: Text('Chat'),
+            title: Text(Applocaliztion.of(context).translate('chat')),
             backgroundColor: Colors.lightBlue[600],
           ),
-         
         ],
         onTap: (index) {
           setState(() {

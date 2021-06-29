@@ -8,12 +8,15 @@ class Message {
   final String message;
   final DateTime createdAt;
   final String email;
+  final String messageType;
 
-  const Message(
-      {@required this.idUser,
-      @required this.image,
-      @required this.username,
-      @required this.message,
-      this.createdAt,
-      @required this.email});
+  const Message({
+    @required this.idUser,
+    @required this.image,
+    @required this.username,
+    @required this.message,
+    @required this.createdAt,
+    @required this.email,
+    @required this.messageType,
+  });
 }

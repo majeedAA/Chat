@@ -26,6 +26,9 @@ class _ChatSpaceState extends State<ChatSpace> {
         stream: massages,
         builder: (context, snapshot) {
           return ListView.builder(
+            physics: BouncingScrollPhysics(),
+            reverse: true,
+            shrinkWrap: true,
             itemCount: chat.length,
             itemBuilder: (conbtext, index) {
               return ChatMassageTile(
@@ -51,6 +54,7 @@ class _ChatSpaceState extends State<ChatSpace> {
         message: doc.data['message'] ?? '',
         createdAt: doc.data['createdAt'].toDate(),
         email: doc.data['email'] ?? ' ',
+        messageType: doc.data['messageType'] ?? ' ',
       );
     }).toList();
   }
